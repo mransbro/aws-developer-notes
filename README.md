@@ -2,9 +2,30 @@
 
 These are my study notes for the AWS Certified Developer - Associate certification. I have already passed the Solutions Architect - Associate exam so the notes might not cover topic if i feel i already know it well enough.
 
+Table of Contents
+=================
+
+* [AWS Services 10,000 foot overview](#AWSServices10,000footoverview)
+
+* [VPC](##VPC)
+
+* [IAM](#IAM)
+
+* [EC2](#EC2)
+
+* [S3](#S3)
+
+* [DynamoDB](#DynamoDB)
+
+* [SQS](#SQS)
+
+* [SNS](#SNS)
+
+* [SWF](#SWF)
+
 [Exam Blueprint](http://awstrainingandcertification.s3.amazonaws.com/production/AWS_certified_developer_associate_blueprint.pdf)
 
-## AWS Services 10,000 foot overview
+# AWS Services 10,000 foot overview
 
 EC2 - Elastic Compute Cloud virtual machines
 
@@ -169,7 +190,7 @@ Workspaces - VDI
 
 AppStream 2.0 - App streaming
 
-## Identity Access Management (IAM)
+# IAM
 
 [IAM FAQ](https://aws.amazon.com/iam/faqs/)
 
@@ -204,9 +225,7 @@ Four storage classes
 
 ## Database Overview & Concepts
 
-
-
-## DynamoDB
+# DynamoDB
 
 [DynamoDB FAQ](https://aws.amazon.com/dynamodb/faqs/)
 	
