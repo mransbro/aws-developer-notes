@@ -1,240 +1,231 @@
-AWS Certified Developer - Associate 2018
+# AWS Certified Developer - Associate 2018 Study notes
 
-http://clusterfrak.com/notes/certs/aws_deva_notes/
-https://renatoargh.wordpress.com/2018/03/01/aws-certified-developer-associate-study-notes/
+These are my study notes for the AWS Certified Developer - Associate certification. I have already passed the Solutions Architect - Associate exam so the notes might not cover topic if i feel i already know it well enough.
 
+## AWS Services 10,000 foot overview
 
+EC2 - Elastic Compute Cloud virtual machines
 
-# AWS Services 10,000 foot overview
+Lightsail - Provisiong service - Very hands off
 
-	EC2 - Elastic Compute Cloud virtual machines
+Elastic Container Service - running containers such as docker at scale
 
-	Lightsail - Provisiong service - Very hands off
+Lambda - Serverless functions
 
-	Elastic Container Service - running containers such as docker at scale
+Elastic Beanstalk - Easier route for developers to get up and running with their cloud
 
-	Lambda - Serverless functions
+ElastiCache - Cache common searches in front of DB servers
 
-	Elastic Beanstalk - Easier route for developers to get up and running with their cloud
+S3 - Key pair object storage kept in buckets
 
-	ElastiCache - Cache common searches in front of DB servers
+EFS - NFS can be mounted on multiple instances
 
-	S3 - Key pair object storage kept in buckets
+Glacier - Archival storage
 
-	EFS - NFS can be mounted on multiple instances
+Snowball - Hardware appliance to transfer data between on-prem and AWS
 
-	Glacier - Archival atorage
+Storage gateway - Virtual appliances that live on-prem and replicate to AWS
 
-	Snowball - Hardware appliance to transfer data between on-prem and AWS
+RDS - MySQL, MSSQL, Aurora, PostGreSQL
 
-	Storage gateway - Virtual appliances that live on-prem and replicate to AWS
+DynamoDB - NoSQL
 
-	RDS - MySQL, MSSQL, Aurora, PostGreSQL
+RedShitft - Data warehousing
 
-	DynamoDB - NoSQL
+AWS Migration Hub - Dashboard that lets you track your application migration
 
-	RedShitft - Data warehousing
+Application Discovery Service - tracks your applications dependencies
 
-	AWS Migration Hub - Dashboard that lets you track your application migration
+Database Migration Service - Migrate DBs to AWS
 
-	Application Discovery Service - tracks your applications dependecies
+Server Migration Service
 
-	Database Migration Service - Migrate DBs to AWS
+VPC Virtual Private Cloud
 
-	Server Migration Service
+Cloudfront - Content Delivery Network (CDN) caches content to make it available quicker to the end user.
 
-	VPC Virtual Private Cloud
+Route53 - Amazon's DNS service
 
-	Cloudfront - Content Delivery Network (CDN) caches content to make it available quicker to the end user.
+API Gateway - Creating API's for your own services
 
-	Route53 - Amazon's DNS service
+Direct Connect - Network peering between yourself and AWS
 
-	API Gateway - Creating API's for your own services
+Codestar - Project managaing code. Collorbation tool
 
-	Direct Connect - Network peering between yourself and AWS
+Codecommit - Source control service
 
-	Codestar - Project managaing code. Collorbation tool
+Codebuild - Complies and test your code
 
-	Codecommit - Source control service
+Codedeploy - Automates your application deployment
 
-	Codebuild - Complies and test your code
+Codepiple - CDS
 
-	Codedeploy - Automates your application deployment
+X-Ray - Used to debug your serverless application
 
-	Codepiple - CDS
+Cloud9 - Online IDE
 
-	X-Ray - Used to debug your serverless application
+CloudWatch - Monitoring
 
-	Cloud9 - Online IDE
+CloudFormation - Infrastructure as Code
 
-	CloudWatch - Monitoring
+CloudTrail - API logging
 
-	CloudFormation - Infrastructure as Code
+Config - Monitor AWS account config
 
-	CloudTrail - API logging
+OpsWorks - Config management using Chef or Puppet
 
-	Config - Monitor AWS account config
+Service Catalog - Managing IT services approved for use
 
-	OpsWorks - Config management using Chef or Puppet
+Systems Manager - Patch maintenance
+Trusted Advisor - Gives advice on security, cost
 
-	Service Catalog - Managing IT services appovred for use
+Managed Services - AWS managed services
 
-	Systems Manager - Patch maintenance
+Elastic Transcoder - Video transcoding. Sizing videos for various devices
 
-	Trusted Advisor - Gives advice on security, cost
+SageMaker - Deep learning
 
-	Managed Services - AWS managed services
+Comprehend - 
 
-	Elastic Transcoder - Video transcoding. Sizing videos for various devices
+Deeplens - Physical hardware camera
 
-	SageMaker - Deep learning
+Lex - Powers Alexa
 
-	Comprehend - 
+Machine learning - 
 
-	Deeplens - Physical hardware camera
+Polly - Text to speech
 
-	Lex - Powers Alexa
+Rekognition - Analyse images and video
 
-	Machine learning - 
+Amazon translate - Language translate
 
-	Polly - Text to speech
+Amazon Transcribe - Automatic speech regonition
 
-	Rekognition - Analyse images and video
+Athena - run SQL queries against S3 buckets
 
-	Amazon translate - Language translate
+Elastic Map Reduce - managed software framework used to process large data sets in a distributed computing environment. Used for data analysis, web indexing, data warehousing, machine learning, financial analysis, scientific simulation etc. EMR supports workloads based on Hadoop, Apache Spark, Presto and Apache HBase.
 
-	Amazon Transcribe - Automatic speech regonition
+CloudSearch
 
-	Athena - run SQL quries against S3 buckets
+ElasticSearch Service
 
-	Elastic Map Reduce - managed software framework used to process large data sets in a distributed computing environment. Used for data analysis, web indexing, data warehousing, machine learning, finanical analysis, scientific simulation etc. EMR supports workloads based on Hadoop, Apache Spark, Presto and Apache HBase.
+Kinesis - Ingesting large amounts of data
 
-	CloudSearch
+Kinesis Video Streams - Ingesting lots of video streams
 
-	ElasticSearch Service
+QuickSight - Business inteligence tools
 
-	Kinesis - Ingesting large amounts of data
+Data Pipeline - Moving data between AWS services
 
-	Kinesis Video Streams - Ingesting lots of video streams
+AWS Glue - Extracte format load
 
-	QuickSight - Business inteligence tools
+IAM - Identity and Management access
 
-	Data Pipeline - Moveing data between AWS services
+Cognito - Mobile Device authentication using federated accounts Facebook etc
 
-	AWS Glue - Extracte format load
+Guard Duty - 
 
-	IAM - Identity and Management access
+Inspector - Anaylse instance security using agent
 
-	Cognito - Mobile Device authentication using federated accounts Facebook etc
+Macie - Scans S3 buskets for personal iD numbers
 
-	Guard Duty - 
+Certificate manager - Free SSL certs 
 
-	Inspector - Anaylse instance security using agent
+CloudHSM - Hardware security module which store keys
 
-	Macie - Scans S3 buskets for personal iD numbers
+Directory services - Connect AWS to onside AD
 
-	Certificate manager - Free SSL certs 
+WAF Web application firewall - L7 firewall
 
-	CloudHSM - Hardware security module which store keys
+Shield - DDOS mitigation
 
-	Directory services - Connect AWS to onside AD
+Artifcat - AWS compliance reports
 
-	WAF Web application firewall - L7 firewall
+Step Functions - 
 
-	Shield - DDOS mitigation
+Amazon MQ - Rabbit MQ
 
-	Artifcat - AWS compliance reports
+SNS - Simple Notification Service
 
-	Step Functions - 
+SQS - Simple Queue Service - decouple infrastructre 
 
-	Amazon MQ - Rabbit MQ
+SWF - Simple Workflow Service
 
-	SNS - Simple Notification Service
+Connect - Contact centre as a service
 
-	SQS - Simple Queue Service - decouple infrastructre 
+Simple Email Service - Sending emails to customers
 
-	SWF - Simple Workflow Service
+Alexa For Business - 
 
-	Connect - Contact centre as a service
+Chime - Google Hangout
 
-	Simple Email Service - Sending emails to customers
+Work Docs - Dropbox like service
 
-	Alexa For Business - 
+WorkMail - Office365
 
-	Chime - Google Hangout
+Workspaces - VDI
 
-	Work Docs - Dropbox like service
+AppStream 2.0 - App streaming
 
-	WorkMail - Office365
+## Identity Access Management (IAM)
 
-	Workspaces - VDI
+Users
+Users have the choice of being given access to the management console and/or programmatic access. Access via the management console enables a password for the account. Enabling programmatic access enables an access key ID and secret access key. This can be used to access t
 
-	AppStream 2.0 - App streaming
+Groups
+Groups allow you to apply policies to groups of users. Recommended to apply policies to groups even if it is for one user. Groups would be created to assign specific
 
+Policies
+Policies are JSON documents that contain permissions to AWS services. ie 
+
+Roles
+
+Secret
+
+## EC2
+
+Access instance meta data at http://169.254.169.254/latest/meta-data/
+
+## S3
+
+## Database Overview & Concepts
+
+## DynamoDB
 	
+NoSQL database
+Stored on SSD
+
+Spread across 3 geographically distinct data centres
+
+2 Consistency models (Leave as default )
+	i. Eventual consistent reads (default). Offers best read performance. Consistency across all copies of data is usually reached within a second.
+	ii. Strongly consistent reads. Returns a result that reflects all writes that received a successful response prior to the read.
+
+## Simple Queue Service (SQS)
 
 
 
-# Identity Access Management (IAM)
-
-	Users
-		Users have the choice of being given access to the management console and/or programmtic access. Access via the management console enables a password for the account. Enabling programmtic access enables an access key ID and secret access key. This can be used to access t
-
-	Groups
-		Groups allow you to apply policies to groups of users. Recommended to apply polcies to groups even if it is for one user. Groups would be created to assign specific
-
-	Policies
-		Policies are JSON documents that contain permissions to AWS services. ie 
-
-	Roles
-
-
-	Secret 
-
-
-
-# EC2
-
-	Access instance meta data at http://169.254.169.254/latest/meta-data/
-
-# S3
-
-# Database Overview & Concepts
-
-# DynamoDB
+## Simple Notification Service (SNS)
 	
-	NoSQL database
-	Stored on SSD
+After a message has been published to a topic it cant be deleted (recalled)
 
-	Spread across 3 geographically distinct data centres
+## Simple Workflow Service (SWF)
 
-	2 Consistency models (Leave as default )
-		i. Eventual consistent reads (default). Offers best read performance. Consistency across all copies of data is usually reached within a second.
-		ii. Strongly consistent reads. Returns a result that reflects all writes that received a succesful response prior to the read.
+## Elastic Beanstalk
 
-# Simple Queue Service (SQS)
+## CloudFormation
 
-# Simple Notification Service (SNS)
-	
-	After a message has been published to a topic it cant be deleted (recalled)
+## AWS Shared resposibility
 
-# Simple Workflow Service (SWF)
+## Route 53 & DNS
 
-# Elastic Beanstalk
+## Virtual Private Cloud (VPC)
 
-# CloudFormation
+By default all traffic between subnets is allowed
 
-# AWS Shared resposibility
+/16 is the largest CIDR block available
 
-# Route 53 & DNS
+Subnets have a 1 to 1 mapping to an Availablity Zone
 
-# Virtual Private Cloud (VPC)
-
-	By default all traffic between subnets is allowed
-
-	/16 is the largest CIDR block available
-
-	Subnets have a 1 to 1 mapping to an Availablity Zone
-
-	1 Internet Gateway per VPC
+1 Internet Gateway per VPC
 
