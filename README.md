@@ -2,6 +2,8 @@
 
 These are my study notes for the AWS Certified Developer - Associate certification. I have already passed the Solutions Architect - Associate exam so the notes might not cover topic if i feel i already know it well enough.
 
+[Exam Blueprint](http://awstrainingandcertification.s3.amazonaws.com/production/AWS_certified_developer_associate_blueprint.pdf)
+
 ## AWS Services 10,000 foot overview
 
 EC2 - Elastic Compute Cloud virtual machines
@@ -147,7 +149,7 @@ Amazon MQ - Rabbit MQ
 
 SNS - Simple Notification Service
 
-SQS - Simple Queue Service - decouple infrastructre 
+SQS - Simple Queue Service -  is a web service that gives you access to message queues that store messages waiting to be processed. With Amazon SQS, you can quickly build message queuing applications that can run on any computer. Amazon SQS can help you build a distributed application with decoupled components, working closely with the Amazon Elastic Compute Cloud (Amazon EC2) and other AWS infrastructure web services.
 
 SWF - Simple Workflow Service
 
@@ -169,6 +171,8 @@ AppStream 2.0 - App streaming
 
 ## Identity Access Management (IAM)
 
+[IAM FAQ](https://aws.amazon.com/iam/faqs/)
+
 Users
 Users have the choice of being given access to the management console and/or programmatic access. Access via the management console enables a password for the account. Enabling programmatic access enables an access key ID and secret access key. This can be used to access t
 
@@ -184,48 +188,89 @@ Secret
 
 ## EC2
 
+[EC2 FAQ](https://aws.amazon.com/ec2/faqs/)
+
 Access instance meta data at http://169.254.169.254/latest/meta-data/
 
 ## S3
 
+[S3 FAQ](https://aws.amazon.com/s3/faqs/)
+
+Four storage classes
+1. S3 Standard
+2. S3 Standard-Infrequent Access
+3. S3 One Zone-Infrequent Access
+4. Glacier
+
 ## Database Overview & Concepts
 
+
+
 ## DynamoDB
+
+[DynamoDB FAQ](https://aws.amazon.com/dynamodb/faqs/)
 	
 NoSQL database
 Stored on SSD
 
 Spread across 3 geographically distinct data centres
 
-2 Consistency models (Leave as default )
-	i. Eventual consistent reads (default). Offers best read performance. Consistency across all copies of data is usually reached within a second.
-	ii. Strongly consistent reads. Returns a result that reflects all writes that received a successful response prior to the read.
+2 Consistency models
+1.Eventual consistent reads (default). Offers best read performance. Consistency across all copies of data is usually reached within a second.
+2.Strongly consistent reads. Returns a result that reflects all writes that received a successful response prior to the read.
+
+DynamoDB is priced on the storage size and its 'Provisioned Throughput'. Provisioned throughput is made up of read capacity units and write capacity units.
+All reads rounded up to 4KB. Eventually consistent reads (default) consists of 2 reads per second. Strongly consistent reads consist of 1 read per second.
+All writes are 1KB. All writes consist of 1 write per second.
+
+Formula is (size of read rounded to 4KB chunk / 4KB) * no of items = read throughput
+Divide by 2 if eventually consistent
+
+If you exceed your provisioned throughput you will get a HTTP status code 400, ProvisionedThroughputExceededException.
+
 
 ## Simple Queue Service (SQS)
 
+[SQS FAQ](https://aws.amazon.com/sqs/faqs/)
+
+[SQS tutorial](https://aws.amazon.com/getting-started/tutorials/send-messages-distributed-applications/)
 
 
 ## Simple Notification Service (SNS)
+
+[SNS FAQ](https://aws.amazon.com/sns/faqs/)
+
+[SNS tutorial](https://aws.amazon.com/getting-started/tutorials/filter-messages-published-to-topics/)
 	
 After a message has been published to a topic it cant be deleted (recalled)
 
 ## Simple Workflow Service (SWF)
 
+[SWF FAQ](https://aws.amazon.com/swf/faqs/)
+
 ## Elastic Beanstalk
+
+[Elastic Beanstalk FAQ](https://aws.amazon.com/elasticbeanstalk/faqs/)
 
 ## CloudFormation
 
-## AWS Shared resposibility
+[https://aws.amazon.com/cloudformation/faqs/](https://aws.amazon.com/cloudformation/faqs/)
+
+## AWS Shared responsibility
 
 ## Route 53 & DNS
 
+[Route53 FAQ](https://aws.amazon.com/route53/faqs/)
+
 ## Virtual Private Cloud (VPC)
+
+[VPC FAQ](https://aws.amazon.com/vpc/faqs/)
 
 By default all traffic between subnets is allowed
 
 /16 is the largest CIDR block available
 
-Subnets have a 1 to 1 mapping to an Availablity Zone
+Subnets have a 1 to 1 mapping to an Availability Zone
 
 1 Internet Gateway per VPC
 
