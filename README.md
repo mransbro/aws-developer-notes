@@ -7,7 +7,6 @@ Table of Contents
 
 * [AWS Services 10,000 foot overview](#AWSServices10,000footoverview)
 
-* [VPC](##VPC)
 
 * [IAM](#IAM)
 
@@ -22,6 +21,16 @@ Table of Contents
 * [SNS](#SNS)
 
 * [SWF](#SWF)
+
+* [Elastic Beanstalk](#Elastic-Beanstalk)
+
+* [CloudFormation](#CloudFormation)
+
+* [AWS Shared Responsibility](#AWS-Shared-Responsibility)
+
+* [Route 53](#Route-53)
+
+* [VPC](##VPC)
 
 [Exam Blueprint](http://awstrainingandcertification.s3.amazonaws.com/production/AWS_certified_developer_associate_blueprint.pdf)
 
@@ -207,13 +216,13 @@ Roles
 
 Secret
 
-## EC2
+# EC2
 
 [EC2 FAQ](https://aws.amazon.com/ec2/faqs/)
 
 Access instance meta data at http://169.254.169.254/latest/meta-data/
 
-## S3
+# S3
 
 [S3 FAQ](https://aws.amazon.com/s3/faqs/)
 
@@ -248,14 +257,14 @@ Divide by 2 if eventually consistent
 If you exceed your provisioned throughput you will get a HTTP status code 400, ProvisionedThroughputExceededException.
 
 
-## Simple Queue Service (SQS)
+# Simple Queue Service (SQS)
 
 [SQS FAQ](https://aws.amazon.com/sqs/faqs/)
 
 [SQS tutorial](https://aws.amazon.com/getting-started/tutorials/send-messages-distributed-applications/)
 
 
-## Simple Notification Service (SNS)
+# Simple Notification Service (SNS)
 
 [SNS FAQ](https://aws.amazon.com/sns/faqs/)
 
@@ -263,25 +272,25 @@ If you exceed your provisioned throughput you will get a HTTP status code 400, P
 	
 After a message has been published to a topic it cant be deleted (recalled)
 
-## Simple Workflow Service (SWF)
+# Simple Workflow Service (SWF)
 
 [SWF FAQ](https://aws.amazon.com/swf/faqs/)
 
-## Elastic Beanstalk
+# Elastic Beanstalk
 
 [Elastic Beanstalk FAQ](https://aws.amazon.com/elasticbeanstalk/faqs/)
 
-## CloudFormation
+# CloudFormation
 
-[https://aws.amazon.com/cloudformation/faqs/](https://aws.amazon.com/cloudformation/faqs/)
+[CloudFormation FAQ](https://aws.amazon.com/cloudformation/faqs/)
 
-## AWS Shared responsibility
+# AWS Shared Responsibility
 
-## Route 53 & DNS
+# Route 53
 
 [Route53 FAQ](https://aws.amazon.com/route53/faqs/)
 
-## Virtual Private Cloud (VPC)
+# Virtual Private Cloud (VPC)
 
 [VPC FAQ](https://aws.amazon.com/vpc/faqs/)
 
