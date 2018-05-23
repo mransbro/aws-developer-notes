@@ -8,15 +8,16 @@ Table of Contents
 * [AWS Services 10,000 foot overview](#AWSServices10,000footoverview)
 
 
-* [IAM](#IAM)
+* [IAM](#iam)
 
 * [EC2](#EC2)
 
 * [S3](#S3)
 
 * [DynamoDB](#DynamoDB)
+  * [Provisioned Throughput](###Provisioned Throughput)
 
-* [SQS](#SQS)
+* [SQS](#Simple-Queue-Service-SQS)
 
 * [SNS](#SNS)
 
@@ -247,6 +248,36 @@ Spread across 3 geographically distinct data centres
 1.Eventual consistent reads (default). Offers best read performance. Consistency across all copies of data is usually reached within a second.
 2.Strongly consistent reads. Returns a result that reflects all writes that received a successful response prior to the read.
 
+
+### Query
+
+
+
+### Indexes
+
+Two types of primary keys available;
+Single Attritube - partition key (Customer no, driver license etc)
+Composite - partition key & sort key (Customer no & date range)
+
+Local Secondary Index
+    same parition key but different sort key
+    Can only be created when creating a table
+
+Global Secondary Index
+    Different partition key and different sort key
+    Can be created at table creation or added later
+
+
+### Streams
+
+Max 24 hour storage
+Can have Lambda triggered from streams
+If a new item is added to the table, the stream caputres an image of the entire item, including all attributes
+if item is updated, stream caputures the before and after image of any attributes that were modified
+if item is deleted the stream captures an image of the item before deletion
+
+### Provisioned Throughput
+
 DynamoDB is priced on the storage size and its 'Provisioned Throughput'. Provisioned throughput is made up of read capacity units and write capacity units.
 All reads rounded up to 4KB. Eventually consistent reads (default) consists of 2 reads per second. Strongly consistent reads consist of 1 read per second.
 All writes are 1KB. All writes consist of 1 write per second.
@@ -257,7 +288,7 @@ Divide by 2 if eventually consistent
 If you exceed your provisioned throughput you will get a HTTP status code 400, ProvisionedThroughputExceededException.
 
 
-# Simple Queue Service (SQS)
+# Simple Queue Service SQS
 
 [SQS FAQ](https://aws.amazon.com/sqs/faqs/)
 
