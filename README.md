@@ -7,7 +7,6 @@ Table of Contents
 
 * [AWS Services 10,000 foot overview](#AWSServices10,000footoverview)
 
-
 * [IAM](#iam)
 
 * [EC2](#EC2)
@@ -216,6 +215,9 @@ Policies are JSON documents that contain permissions to AWS services. ie
 Roles
 
 Secret
+
+### Active Directory Federation
+
 
 # EC2
 
