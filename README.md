@@ -7,7 +7,6 @@ Table of Contents
 
 * [AWS Services 10,000 foot overview](#AWSServices10,000footoverview)
 
-
 * [IAM](#iam)
 
 * [EC2](#EC2)
@@ -221,6 +220,7 @@ Roles
 
 Secret
 
+
 ## Security Token Service (STS)
 
 * Grants users limited and temporary access to AWS resources.
@@ -232,6 +232,10 @@ Secret
         * Use Facebook/Amazon/Google or other openID provider
     3. Cross account access
         * Lets users from one AWS account access resources in another
+
+### Active Directory Federation
+
+
 
 # EC2
 
