@@ -117,13 +117,13 @@ Elastic Transcoder - Video transcoding. Sizing videos for various devices
 
 SageMaker - Deep learning
 
-Comprehend - 
+Comprehend -
 
 Deeplens - Physical hardware camera
 
 Lex - Powers Alexa
 
-Machine learning - 
+Machine learning -
 
 Polly - Text to speech
 
@@ -155,13 +155,13 @@ IAM - Identity and Management access
 
 Cognito - Mobile Device authentication using federated accounts Facebook etc
 
-Guard Duty - 
+Guard Duty -
 
 Inspector - Anaylse instance security using agent
 
 Macie - Scans S3 buskets for personal iD numbers
 
-Certificate manager - Free SSL certs 
+Certificate manager - Free SSL certs
 
 CloudHSM - Hardware security module which store keys
 
@@ -173,7 +173,7 @@ Shield - DDOS mitigation
 
 Artifcat - AWS compliance reports
 
-Step Functions - 
+Step Functions -
 
 Amazon MQ - Rabbit MQ
 
@@ -187,7 +187,7 @@ Connect - Contact centre as a service
 
 Simple Email Service - Sending emails to customers
 
-Alexa For Business - 
+Alexa For Business -
 
 Chime - Google Hangout
 
@@ -214,12 +214,11 @@ Groups allow you to apply policies to multiple users. Recommended to apply polic
 * Groups cannot be nested
 
 Policies
-Policies are JSON documents that contain permissions to AWS services. ie 
+Policies are JSON documents that contain permissions to AWS services. ie
 
 Roles
 
 Secret
-
 
 ## Security Token Service (STS)
 
@@ -235,13 +234,13 @@ Secret
 
 ### Active Directory Federation
 
-
-
 # EC2
 
 [EC2 FAQ](https://aws.amazon.com/ec2/faqs/)
 
 Access instance meta data at http://169.254.169.254/latest/meta-data/
+
+* Scipts can be run from the user data section when creating an instance
 
 # S3
 
@@ -253,6 +252,27 @@ Four storage classes
 2. S3 Standard-Infrequent Access
 3. S3 One Zone-Infrequent Access
 4. Glacier
+
+* No limit on number of objects in a bucket
+* A bucket cannot contain a bucket
+
+
+* S3 provides read-after-write consistency for PUTS of new objects.
+* S3 offers eventual consistency for overwrite PUTS and DELETES.
+
+* If you expect more than 300 PUT/LIST/DELETE requests per second or more than 800 GET request per second raise a support request with AWS to prepare for the workload.
+
+### Encryption
+
+* Server-Side
+1. KMS-Managed Encryption keys
+2. Amazon S3-Managed Encryption keys
+3. Customer-Provided Encryption keys
+
+* Client-Side
+1. AWS KMS-managed customer master key
+2. Client-side master key
+
 
 ## Database Overview & Concepts
 
@@ -283,7 +303,6 @@ Local Secondary Index
 Global Secondary Index
     Different partition key and different sort key
     Can be created at table creation or added later
-
 
 ## Streams
 
@@ -321,20 +340,17 @@ Divide by 2 if eventually consistent
 
 If you exceed your provisioned throughput you will get a HTTP status code 400, ProvisionedThroughputExceededException.
 
-
 # Simple Queue Service SQS
 
 [SQS FAQ](https://aws.amazon.com/sqs/faqs/)
 
 [SQS tutorial](https://aws.amazon.com/getting-started/tutorials/send-messages-distributed-applications/)
 
-
 # Simple Notification Service (SNS)
 
 [SNS FAQ](https://aws.amazon.com/sns/faqs/)
 
 [SNS tutorial](https://aws.amazon.com/getting-started/tutorials/filter-messages-published-to-topics/)
-	
 After a message has been published to a topic it cant be deleted (recalled)
 
 # Simple Workflow Service (SWF)
@@ -395,7 +411,6 @@ The only required section in a Cloudformation template is the Resources section
 * Use function Fn:GetAtt to output data
 * Stacks can wait for applications to be provisioned using the 'waitCondition'
 
-
 # AWS Shared Responsibility
 
 # Route 53
@@ -429,4 +444,3 @@ By default all traffic between subnets is allowed
 Subnets have a 1 to 1 mapping to an Availability Zone
 
 1 Internet Gateway per VPC
-
