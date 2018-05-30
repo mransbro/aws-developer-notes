@@ -207,8 +207,12 @@ AppStream 2.0 - App streaming
 Users
 Users have the choice of being given access to the management console and/or programmatic access. Access via the management console enables a password for the account. Enabling programmatic access enables an access key ID and secret access key. This can be used to access t
 
-Groups
-Groups allow you to apply policies to groups of users. Recommended to apply policies to groups even if it is for one user. Groups would be created to assign specific
+### Groups
+
+Groups allow you to apply policies to multiple users. Recommended to apply policies to groups even if it is for one user.
+
+* Users can be members of multiple groups
+* Groups cannot be nested
 
 Policies
 Policies are JSON documents that contain permissions to AWS services. ie 
@@ -216,6 +220,18 @@ Policies are JSON documents that contain permissions to AWS services. ie
 Roles
 
 Secret
+
+## Security Token Service (STS)
+
+* Grants users limited and temporary access to AWS resources.
+* 3 sources:
+    1. Federation (often Active Directory)
+        * Uses SAML
+        * SSO allows users to log in to AWS Console without assigning IAM credentials
+    2. Federation with mobile app
+        * Use Facebook/Amazon/Google or other openID provider
+    3. Cross account access
+        * Lets users from one AWS account access resources in another
 
 # EC2
 
@@ -355,8 +371,6 @@ Domains - workflow and activity types and the workflow execution itself are all 
 * Java SE
 * Docker
 * Go
-
-
 
 # CloudFormation
 
