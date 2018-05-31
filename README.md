@@ -246,21 +246,29 @@ Access instance meta data at http://169.254.169.254/latest/meta-data/
 
 [S3 FAQ](https://aws.amazon.com/s3/faqs/)
 
-Four storage classes
+### Storage classes
+
+* Buckets can contain objects of different storage classes
 
 1. S3 Standard
-2. S3 Standard-Infrequent Access
-3. S3 One Zone-Infrequent Access
-4. Glacier
+2. S3 Standard-Infrequent Access - for data that is less frequently accessed but requires rapid access when needed. Availability drops to 99.9% and there is a data retrival charge of $0.01 / GB.
+3. S3 One Zone-Infrequent Access - Offers similar performance as other S3 classes but stores data redundantly within an Availability Zone not across Availability Zones.
+4. Glacier - used for archiving data.
 
 * No limit on number of objects in a bucket
+* Largest object size is 5TB
+* Smallest object size is 0 bytes
+* Largest upload in a single PUT is 5GB. (Objects larger than 100MB should be uploaded with multipart uploader)
 * A bucket cannot contain a bucket
 
+* Need to delete large amounts of 
 
 * S3 provides read-after-write consistency for PUTS of new objects.
 * S3 offers eventual consistency for overwrite PUTS and DELETES.
 
 * If you expect more than 300 PUT/LIST/DELETE requests per second or more than 800 GET request per second raise a support request with AWS to prepare for the workload.
+
+* Event notifications can sent in response to actions such as PUTs, POSTs, COPYs or DELETEs, Messages can be sent through SNS, SQS or Lambda.
 
 ### Encryption
 
