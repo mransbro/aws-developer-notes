@@ -445,10 +445,16 @@ The only required section in a Cloudformation template is the Resources section
 
 [VPC FAQ](https://aws.amazon.com/vpc/faqs/)
 
-By default all traffic between subnets is allowed
+* By default all traffic between subnets is allowed
 
-/16 is the largest CIDR block available
+* /16 is the largest CIDR block available
 
-Subnets have a 1 to 1 mapping to an Availability Zone
+* Subnets have a 1 to 1 mapping to an Availability Zone
 
-1 Internet Gateway per VPC
+* 1 Internet Gateway per VPC
+
+* You cannot change the ip range of a VPC
+
+* Elastic IP addresses (EIPs) are public IP addresses that 
+
+* Elastic Network interface
