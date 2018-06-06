@@ -1,6 +1,6 @@
 # AWS Certified Developer - Associate 2018 Study notes
 
-These are my study notes for the AWS Certified Developer - Associate certification. I have already passed the Solutions Architect - Associate exam so the notes might not cover topic if i feel i already know it well enough.
+These are my study notes for the AWS Certified Developer - Associate certification. I have already passed the Solutions Architect - Associate exam so the notes might not cover topics if i feel i already know it well enough.
 
 Table of Contents
 =================
@@ -82,7 +82,7 @@ API Gateway - Creating API's for your own services
 
 Direct Connect - Network peering between yourself and AWS
 
-Codestar - Project managaing code. Collorbation tool
+Codestar - Project managing code. Collorbation tool
 
 Codecommit - Source control service
 
@@ -251,7 +251,7 @@ Access instance meta data at http://169.254.169.254/latest/meta-data/
 * Buckets can contain objects of different storage classes
 
 1. S3 Standard
-2. S3 Standard-Infrequent Access - for data that is less frequently accessed but requires rapid access when needed. Availability drops to 99.9% and there is a data retrival charge of $0.01 / GB.
+2. S3 Standard-Infrequent Access - for data that is less frequently accessed but requires rapid access when needed. Availability drops to 99.9% and there is a data retrieval charge of $0.01 / GB.
 3. S3 One Zone-Infrequent Access - Offers similar performance as other S3 classes but stores data redundantly within an Availability Zone not across Availability Zones.
 4. Glacier - used for archiving data.
 
@@ -261,7 +261,7 @@ Access instance meta data at http://169.254.169.254/latest/meta-data/
 * Largest upload in a single PUT is 5GB. (Objects larger than 100MB should be uploaded with multipart uploader)
 * A bucket cannot contain a bucket
 
-* Need to delete large amounts of 
+* Need to delete large amounts of
 
 * S3 provides read-after-write consistency for PUTS of new objects.
 * S3 offers eventual consistency for overwrite PUTS and DELETES.
