@@ -14,8 +14,7 @@ Table of Contents
 * [S3](#S3)
 
 * [DynamoDB](#DynamoDB)
-  * [Provisioned Throughput](###Provisioned Throughput)
-
+  
 * [SQS](#Simple-Queue-Service-SQS)
 
 * [SNS](#SNS)
@@ -241,6 +240,14 @@ Secret
 Access instance meta data at http://169.254.169.254/latest/meta-data/
 
 * Scipts can be run from the user data section when creating an instance
+
+## Load Balancers
+
+* There are 3 types of load balancer; Application, Network and Classic. Application is used to route HTTP/HTTPS (L7) traffic. Network and Classic are used to route TCP (L4) traffic.
+
+    1. Application - TLS termination
+    2. Network - Extermeme performance and static IP
+    3. Classic (also refered to as Elastic Load Balancer ELB) - 
 
 # S3
 
