@@ -118,8 +118,6 @@ SageMaker - Deep learning
 
 Comprehend -
 
-Deeplens - Physical hardware camera
-
 Lex - Powers Alexa
 
 Machine learning -
@@ -143,8 +141,6 @@ ElasticSearch Service
 Kinesis - Ingesting large amounts of data
 
 Kinesis Video Streams - Ingesting lots of video streams
-
-QuickSight - Business inteligence tools
 
 Data Pipeline - Moving data between AWS services
 
@@ -182,15 +178,9 @@ SQS - Simple Queue Service -  is a web service that gives you access to message 
 
 SWF - Simple Workflow Service
 
-Connect - Contact centre as a service
-
 Simple Email Service - Sending emails to customers
 
 Alexa For Business -
-
-Chime - Google Hangout
-
-Work Docs - Dropbox like service
 
 WorkMail - Office365
 
@@ -378,7 +368,6 @@ Long polling - doesn’t return a response until a message arrives in the messag
 In almost all cases, long polling is preferable to short polling. One case you might want to use short polling is if you application uses a single thread to poll multiple queues.
 
 When a consumer receives a message from the SQS queue, it stays in the SQS queue. The message must be deleted by the consumer once the message has been fully processed. To prevent other conumers from receiving the message, SQS sets a Visibility Timeout, which is the period of time where SQS prevents other consuming components from receiving and processing the message.
-
 
 # Simple Notification Service (SNS)
 
