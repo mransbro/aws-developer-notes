@@ -110,19 +110,12 @@ Service Catalog - Managing IT services approved for use
 Systems Manager - Patch maintenance
 Trusted Advisor - Gives advice on security, cost
 
-Managed Services - AWS managed services
-
 Elastic Transcoder - Video transcoding. Sizing videos for various devices
 
-SageMaker - Deep learning
 
-Comprehend -
-
-Deeplens - Physical hardware camera
 
 Lex - Powers Alexa
 
-Machine learning -
 
 Polly - Text to speech
 
@@ -249,6 +242,8 @@ Access instance meta data at http://169.254.169.254/latest/meta-data/
     2. Network - Extermeme performance and static IP
     3. Classic (also refered to as Elastic Load Balancer ELB) - 
 
+* Sticky sessions are a mechanism to route requests to the same target in a target group. This is useful for servers that maintain state information in order to provide a continuous experience to clients.
+
 # S3
 
 [S3 FAQ](https://aws.amazon.com/s3/faqs/)
@@ -321,7 +316,7 @@ Global Secondary Index
 
 ## Streams
 
-4 options for streams only 1 can be selected
+Four options for streams only 1 can be selected
 
 1. Keys Only - Only the key attributes of the modified item
 2. New image the entire item, as it appears after it was modified
