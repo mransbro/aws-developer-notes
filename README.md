@@ -113,7 +113,6 @@ Trusted Advisor - Gives advice on security, cost
 Elastic Transcoder - Video transcoding. Sizing videos for various devices
 
 
-
 Lex - Powers Alexa
 
 
@@ -136,8 +135,6 @@ ElasticSearch Service
 Kinesis - Ingesting large amounts of data
 
 Kinesis Video Streams - Ingesting lots of video streams
-
-QuickSight - Business inteligence tools
 
 Data Pipeline - Moving data between AWS services
 
@@ -175,15 +172,9 @@ SQS - Simple Queue Service -  is a web service that gives you access to message 
 
 SWF - Simple Workflow Service
 
-Connect - Contact centre as a service
-
 Simple Email Service - Sending emails to customers
 
 Alexa For Business -
-
-Chime - Google Hangout
-
-Work Docs - Dropbox like service
 
 WorkMail - Office365
 
@@ -356,12 +347,50 @@ If you exceed your provisioned throughput you will get a HTTP status code 400, P
 
 [SQS tutorial](https://aws.amazon.com/getting-started/tutorials/send-messages-distributed-applications/)
 
+SQS is a pull based messaging service.
+
+Allows the 'decoupling' of components of an application.
+
+FIFO queues are not supported in all regions. Currently only: US East (Ohio), US East (N. Virginia), US West (Oregon), and EU (Ireland) regions.
+
+The maximum amount of time that a message can live in a SQS queue is 14 days. The retention period can be configred to be anywhere betweeen 1 minute and 14 days. The default is 4 days. Once the message retention limit is reached, your messages are automatically deleted.
+
+SQS messages must be between 1 and 256 KB in size.
+
+SQS supports two types of pull based polling:
+
+Short polling - SQS returns a response immediately, even if there is no message in the queue
+Long polling - doesn’t return a response until a message arrives in the message queue, or the long poll times out. Can be cheaper then short polling as it can reduce the number of empty receives.
+In almost all cases, long polling is preferable to short polling. One case you might want to use short polling is if you application uses a single thread to poll multiple queues.
+
+When a consumer receives a message from the SQS queue, it stays in the SQS queue. The message must be deleted by the consumer once the message has been fully processed. To prevent other conumers from receiving the message, SQS sets a Visibility Timeout, which is the period of time where SQS prevents other consuming components from receiving and processing the message.
+
 # Simple Notification Service (SNS)
 
 [SNS FAQ](https://aws.amazon.com/sns/faqs/)
 
 [SNS tutorial](https://aws.amazon.com/getting-started/tutorials/filter-messages-published-to-topics/)
 After a message has been published to a topic it cant be deleted (recalled)
+
+SNS is a messaging service that 'pushes' messages to clients.
+
+Messages protocols:
+
+* Application
+* SMS text message
+* Email
+* Email-JSON
+* AWS SQS
+* HTTP
+* HTTPS
+
+SNS can be used with SQS to fan messages out to multiple queues.
+
+SNS uses Topics to send messages. To receive messages published to a topic you have to subscribe. Once a message is published, SNS attempts to deliver to every endpoint that is subscribed.
+
+Messages can be customised by protocol type.
+
+Messages are stored reduntly across mulitple AZ's.
 
 # Simple Workflow Service (SWF)
 
@@ -408,13 +437,19 @@ Domains - workflow and activity types and the workflow execution itself are all 
 
 A cloudFormation is made up of the following sections:
 
-Metadata (optional) - objects that provide additional information about the template.
-Parameters (optional) - specifies values that you can pass in to your template at runtime (when you create or update a stack). You can refer to parameters in the Resources and Outputs sections of the template.
-Mappings (optional) - a mapping of keys and associated values that you can use to specify conditional parameter values, similar to a lookup table. You can match a key to a corresponding value by using the Fn::FindInMap intrinsic function in the Resources and Outputs section.
-Conditions (optional) - defines conditions that control whether certain resources are created or whether certain resource properties are assigned a value during stack creation or update. For example, you could conditionally create a resource that depends on whether the stack is for a production or test environment.
-Transform (optional) - for serverless applications (also referred to as Lambda-based applications), specifies the version of the AWS Serverless Application Model (AWS SAM) to use.
-Resources (required) - specify the stack resources and their properties such as an EC2 instance or a S3 bucket. You can refer to resources in the Resources and Outputs sections of the template.
-Outputs - describes the values that are returned whenever you view your stack’s properties. For example, you can declare an output for an S3 bucket name and then call the aws cloudformation describe-stacks AWS CLI command to view the name.
+__Resources__ (required) - specify the stack resources and their properties such as an EC2 instance or a S3 bucket. You can refer to resources in the Resources and Outputs sections of the template.
+
+__Metadata__ (optional) - objects that provide additional information about the template.
+
+__Parameters__ (optional) - specifies values that you can pass in to your template at runtime (when you create or update a stack). You can refer to parameters in the Resources and Outputs sections of the template.
+
+__Mappings__ (optional) - a mapping of keys and associated values that you can use to specify conditional parameter values, similar to a lookup table. You can match a key to a corresponding value by using the Fn::FindInMap intrinsic function in the Resources and Outputs section.
+
+__Conditions__ (optional) - defines conditions that control whether certain resources are created or whether certain resource properties are assigned a value during stack creation or update. For example, you could conditionally create a resource that depends on whether the stack is for a production or test environment.
+
+__Transform__ (optional) - for serverless applications (also referred to as Lambda-based applications), specifies the version of the AWS Serverless Application Model (AWS SAM) to use.
+
+__Outputs__ describes the values that are returned whenever you view your stack’s properties. For example, you can declare an output for an S3 bucket name and then call the aws cloudformation describe-stacks AWS CLI command to view the name.
 The only required section in a Cloudformation template is the Resources section
 
 * Automatic rollback on error is enabled by default.
@@ -422,6 +457,10 @@ The only required section in a Cloudformation template is the Resources section
 * Stacks can wait for applications to be provisioned using the 'waitCondition'
 
 # AWS Shared Responsibility
+
+IaaS - Customer manages OS and above including security and patches. AWS manages hypervisor and below including physical infrastructure.
+
+SaaS – AWS manages everything except user credentials.
 
 # Route 53
 
