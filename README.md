@@ -1,11 +1,11 @@
-# AWS Certified Developer - Associate 2018 Study notes
+# AWS Certified Developer - Associate Study notes
 
 These are my study notes for the AWS Certified Developer - Associate certification. I have already passed the Solutions Architect - Associate exam so the notes might not cover topics if i feel i already know it well enough.
 
 Table of Contents
 =================
 
-* [AWS Services 10,000 foot overview](#AWSServices10,000footoverview)
+* [AWS Services 10,000 foot overview](#AWS-Services)
 
 * [IAM](#iam)
 
@@ -33,7 +33,7 @@ Table of Contents
 
 [Exam Blueprint](http://awstrainingandcertification.s3.amazonaws.com/production/AWS_certified_developer_associate_blueprint.pdf)
 
-# AWS Services 10,000 foot overview
+# AWS-Services
 
 EC2 - Elastic Compute Cloud virtual machines
 
