@@ -29,7 +29,9 @@ Table of Contents
 
 * [Route 53](#Route-53)
 
-* [VPC](##VPC)
+* [VPC](#VPC)
+
+* [CloudFront](#CloudFront)
 
 [Exam Blueprint](http://awstrainingandcertification.s3.amazonaws.com/production/AWS_certified_developer_associate_blueprint.pdf)
 
@@ -138,8 +140,6 @@ Kinesis Video Streams - Ingesting lots of video streams
 
 Data Pipeline - Moving data between AWS services
 
-AWS Glue - Extracte format load
-
 IAM - Identity and Management access
 
 Cognito - Mobile Device authentication using federated accounts Facebook etc
@@ -162,10 +162,6 @@ Shield - DDOS mitigation
 
 Artifcat - AWS compliance reports
 
-Step Functions -
-
-Amazon MQ - Rabbit MQ
-
 SNS - Simple Notification Service
 
 SQS - Simple Queue Service -  is a web service that gives you access to message queues that store messages waiting to be processed. With Amazon SQS, you can quickly build message queuing applications that can run on any computer. Amazon SQS can help you build a distributed application with decoupled components, working closely with the Amazon Elastic Compute Cloud (Amazon EC2) and other AWS infrastructure web services.
@@ -174,13 +170,9 @@ SWF - Simple Workflow Service
 
 Simple Email Service - Sending emails to customers
 
-Alexa For Business -
-
 WorkMail - Office365
 
 Workspaces - VDI
-
-AppStream 2.0 - App streaming
 
 # IAM
 
@@ -263,6 +255,8 @@ Access instance meta data at http://169.254.169.254/latest/meta-data/
 
 * Event notifications can sent in response to actions such as PUTs, POSTs, COPYs or DELETEs, Messages can be sent through SNS, SQS or Lambda.
 
+* CORS (Cross-Origin resource sharing) enables a way for client web applications loaded in one domain to interact with resources in a different domain.
+
 ### Encryption
 
 * Server-Side
@@ -273,9 +267,6 @@ Access instance meta data at http://169.254.169.254/latest/meta-data/
 * Client-Side
 1. AWS KMS-managed customer master key
 2. Client-side master key
-
-
-## Database Overview & Concepts
 
 # DynamoDB
 
@@ -355,15 +346,17 @@ FIFO queues are not supported in all regions. Currently only: US East (Ohio), US
 
 The maximum amount of time that a message can live in a SQS queue is 14 days. The retention period can be configred to be anywhere betweeen 1 minute and 14 days. The default is 4 days. Once the message retention limit is reached, your messages are automatically deleted.
 
-SQS messages must be between 1 and 256 KB in size.
+SQS messages must be between 1 and 256 KB in size. Billed in 64KB chunks.
 
 SQS supports two types of pull based polling:
 
-Short polling - SQS returns a response immediately, even if there is no message in the queue
-Long polling - doesn’t return a response until a message arrives in the message queue, or the long poll times out. Can be cheaper then short polling as it can reduce the number of empty receives.
+**Short polling** - SQS returns a response immediately, even if there is no message in the queue
+**Long polling** - doesn’t return a response until a message arrives in the message queue, or the long poll times out. Can be cheaper then short polling as it can reduce the number of empty receives.
 In almost all cases, long polling is preferable to short polling. One case you might want to use short polling is if you application uses a single thread to poll multiple queues.
 
 When a consumer receives a message from the SQS queue, it stays in the SQS queue. The message must be deleted by the consumer once the message has been fully processed. To prevent other conumers from receiving the message, SQS sets a Visibility Timeout, which is the period of time where SQS prevents other consuming components from receiving and processing the message.
+
+First 1 million requests are free, then $0.50 for every million after.
 
 # Simple Notification Service (SNS)
 
@@ -399,7 +392,7 @@ Messages are stored reduntly across mulitple AZ's.
 * Workers are programs that interact with SWF to get tasks, process received tasks and return the results.
 * Decider is a program that controls the coordination of tasks.
 
-Tasks assigned only one and never duplicated
+Tasks assigned only once and never duplicated.
 
 Domains - workflow and activity types and the workflow execution itself are all scoped to a domain. Domains isolate a set of types, executions, and task lists from other within the same account. You can register a domain by using the console or SWF API. Using JSON.
 
@@ -462,7 +455,7 @@ IaaS - Customer manages OS and above including security and patches. AWS manages
 
 SaaS – AWS manages everything except user credentials.
 
-# Route 53
+# Route-53
 
 [Route53 FAQ](https://aws.amazon.com/route53/faqs/)
 
@@ -482,7 +475,7 @@ SaaS – AWS manages everything except user credentials.
 * Failover - failover allows you to have an active/passive design. Using health checks to assess whether to send traffic to the primary or secondary resource. A health check can use Cloud watch alarms, other health checks or simply use a TCP connection to an IP or domain name.
 * Geolocation - used to send traffic to a particular region based on source location. ie Customers in a Eurozone country always get routed to a server with prices in Euros.
 
-# Virtual Private Cloud (VPC)
+# VPC
 
 [VPC FAQ](https://aws.amazon.com/vpc/faqs/)
 
@@ -496,6 +489,20 @@ SaaS – AWS manages everything except user credentials.
 
 * You cannot change the ip range of a VPC
 
-* Elastic IP addresses (EIPs) are public IP addresses that 
+* Elastic IP addresses (EIPs) are public IP addresses that
 
 * Elastic Network interface
+
+# CloudFront
+
+* Content Delivery Network (CDN). Provides content quicker to customers by caching it in edge locations. ie customer 1 watches a video from s3. s3 bucket is in Ireland but user is in Sydney. The content flows Ireland -----> Sydney. CloudFront caches it locally near Sydney so the second time its accessed the content flows, CloudFront Sydney -> Sydney.
+
+* Edge locations can be used for write as well as read.
+
+* Objects are cached for ther life of their TTL. TTL can be 0 seconds to 365 days. Default is 24 hours.
+
+* Origin can be S3, EC2, ELB, Route53 and non AWS server ie on-prem
+
+* Restrict viewer access by signed URL or Signed Cookies
+
+* Restrict content based on geo location (whitelist and blacklist)
