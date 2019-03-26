@@ -33,6 +33,8 @@ Table of Contents
 
 * [CloudFront](#CloudFront)
 
+* [Lambda](#Lambda)
+
 [Exam Blueprint](http://awstrainingandcertification.s3.amazonaws.com/production/AWS_certified_developer_associate_blueprint.pdf)
 
 # AWS-Services
@@ -506,3 +508,18 @@ SaaS – AWS manages everything except user credentials.
 * Restrict viewer access by signed URL or Signed Cookies
 
 * Restrict content based on geo location (whitelist and blacklist)
+
+# Lambda
+* Compute service allows you to run code without provisioning and managing servers. Under the hood are EC2 Instances managed by AWS.
+
+* Lambda is stateless and event driven. 
+
+* If we increase memory, cpu usage will get increase. Max memory limit is 3008 MBs. Max execution timeouts is 300
+
+* Temporary objects downloaded by lambda are stored in /tmp directory. 
+
+* Alias can be use to manage different versions for lambda. You can change version behind lambda.
+
+* Use AWS Lambda Environment Variables to pass operational parameters to your function.
+
+* Lambda Optimization Tips: Avoid using recursion, keep deployment size minimum, install only dependecies that is required, keep your function logic outside handler. (source: https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html)
