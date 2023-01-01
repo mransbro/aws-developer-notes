@@ -65,7 +65,7 @@ RDS - MySQL, MSSQL, Aurora, PostGreSQL
 
 DynamoDB - NoSQL
 
-RedShitft - Data warehousing
+RedShift - Data warehousing
 
 AWS Migration Hub - Dashboard that lets you track your application migration
 
@@ -162,7 +162,7 @@ WAF Web application firewall - L7 firewall
 
 Shield - DDOS mitigation
 
-Artifcat - AWS compliance reports
+Artifact - AWS compliance reports
 
 SNS - Simple Notification Service
 
